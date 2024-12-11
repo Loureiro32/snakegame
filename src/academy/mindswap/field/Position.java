@@ -2,20 +2,20 @@ package academy.mindswap.field;
 
 public class Position {
 
-    private final int x;
-    private final int y;
+    private final int col;
+    private final int row;
 
 
-    public Position(int x, int y) {
-        this.x = x;
-        this.y = y;
+    public Position(int col, int row) {
+        this.col = col;
+        this.row = row;
     }
 
     public int getCol() {
-        return 0;
+        return col;
     }
 
     public int getRow() {
-        return 0;
+        return row;
     }
 }

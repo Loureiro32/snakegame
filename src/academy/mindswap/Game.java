@@ -15,7 +15,7 @@ public class Game {
 
     public Game(int cols, int rows, int delay) {
         Field.init(cols, rows);
-        snake = new Snake();
+        snake = new Snake(Direction.RIGHT);
         this.delay = delay;
     }
 
