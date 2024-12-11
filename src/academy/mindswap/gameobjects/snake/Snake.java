@@ -9,16 +9,15 @@ public class Snake {
     private final static int SNAKE_INITIAL_SIZE = 3;
     private static LinkedList<Position> body;
     private Direction direction;
-    private boolean alive = true;
+    private boolean alive;
 
     public Snake(Direction initialDirection) {
         body = new LinkedList<>();
-
         for (int i = 0; i < SNAKE_INITIAL_SIZE; i++) {
             body.add(new Position(i + 3, 15));
         }
         direction = initialDirection;
-        alive = isAlive();
+        alive = true;
     }
 
     public static Position getHead() {
@@ -31,7 +30,6 @@ public class Snake {
         body.addFirst(new Position(tail.getCol(), tail.getRow()));
     }
 
-    //*Done
     public void move(Direction direction) {
         Position head = getHead();
         body.removeFirst();
