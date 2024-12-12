@@ -11,6 +11,16 @@ public class Position {
         this.row = row;
     }
 
+
+    @Override
+    public boolean equals(Object position) {
+        if (position instanceof Position) {
+            return ((Position) position).getCol() == this.col && ((Position) position).getRow() == this.row;
+        }
+
+        return false;
+    }
+
     public int getCol() {
         return col;
     }
