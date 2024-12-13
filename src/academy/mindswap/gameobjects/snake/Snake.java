@@ -30,9 +30,16 @@ public class Snake {
         body.addFirst(new Position(tail.getCol(), tail.getRow()));
     }
 
+    private boolean isOppositeDirection(Direction currentDirection, Direction newDirection) {
+        return (currentDirection == Direction.RIGHT && newDirection == Direction.LEFT) || (currentDirection == Direction.LEFT && newDirection == Direction.RIGHT) || (currentDirection == Direction.UP && newDirection == Direction.DOWN) || (currentDirection == Direction.DOWN && newDirection == Direction.UP);
+    }
+
     public void move(Direction direction) {
         Position head = getHead();
         body.removeFirst();
+        if (isOppositeDirection(this.direction, direction)) {
+            direction = this.direction;
+        }
         switch (direction) {
             case UP:
 
