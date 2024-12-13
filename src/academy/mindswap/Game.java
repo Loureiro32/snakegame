@@ -107,11 +107,13 @@ public class Game {
             snake.increaseSize();
             generateFruit();
         }
-        if (snake.getTail().equals(head)) {
+        if (snake.getFullSnake().equals(head)) {
             snake.die();
+            Field.drawGameOver();
         }
-        if (head.getCol() == 0 || head.getCol() >= Field.getWidth() - 1 || head.getRow() == 1 || head.getRow() >= Field.getHeight() - 1) {
+        if (head.getCol() == 1 || head.getCol() >= Field.getWidth() - 1 || head.getRow() == 1 || head.getRow() >= Field.getHeight() - 1) {
             snake.die();
+            Field.drawGameOver();
         }
     }
 }

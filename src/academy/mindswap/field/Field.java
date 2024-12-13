@@ -5,6 +5,7 @@ import academy.mindswap.gameobjects.snake.Snake;
 import com.googlecode.lanterna.TerminalFacade;
 import com.googlecode.lanterna.input.Key;
 import com.googlecode.lanterna.screen.Screen;
+import com.googlecode.lanterna.screen.ScreenCharacterStyle;
 import com.googlecode.lanterna.screen.ScreenWriter;
 import com.googlecode.lanterna.terminal.Terminal;
 
@@ -13,7 +14,9 @@ public final class Field {
     private static final String BORDER_STRING = "▒";
     private static final String SNAKE_BODY_STRING = "#";
     private static final String SNAKE_HEAD_STRING = "0";
-    private static final String FRUIT_STRING = "@";
+    private static final String FRUIT_STRING = "❦";
+    private static final String GAME_OVER = "( -_•)▄︻テحكـ━一 GAME OVER!";
+    private static final String Counter = "Points : ";
 
     private static int width;
     private static int height;
@@ -77,12 +80,22 @@ public final class Field {
         }
     }
 
+
     public static Key readInput() {
         return screen.readInput();
     }
 
     public static void drawFruit(Fruit fruit) {
         screen.putString(fruit.getPosition().getCol(), fruit.getPosition().getRow(), FRUIT_STRING, Terminal.Color.MAGENTA, null);
+    }
+
+
+    /*public static void drawCounterPoints(int points) {
+        screen.putString(0, 0, Counter, Terminal.Color.WHITE, Terminal.Color.DEFAULT);
+    }*/
+
+    public static void drawGameOver() {
+        screen.putString(35, 10, GAME_OVER, Terminal.Color.RED, Terminal.Color.DEFAULT, ScreenCharacterStyle.Blinking);
     }
 
     public static int getWidth() {
