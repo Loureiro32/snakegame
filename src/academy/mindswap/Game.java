@@ -26,7 +26,7 @@ public class Game {
 
         generateFruit(); // uncomment when it's time to introduce fruits
 
-        while (true) {
+        while (snake.isAlive()) {
             Thread.sleep(delay);
             Field.clearTail(snake);
             moveSnake();
@@ -110,7 +110,7 @@ public class Game {
         if (snake.getTail().equals(head)) {
             snake.die();
         }
-        if (head.getCol() >= Field.getWidth() - 1 || head.getRow() >= Field.getHeight() - 1) {
+        if (head.getCol() == 0 || head.getCol() >= Field.getWidth() - 1 || head.getRow() == 1 || head.getRow() >= Field.getHeight() - 1) {
             snake.die();
         }
     }
