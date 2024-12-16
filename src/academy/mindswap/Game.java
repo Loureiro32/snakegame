@@ -37,7 +37,7 @@ public class Game {
     }
 
     private int generateRandom(int min, int max) {
-        return (int) (Math.random() * max) + min;
+        return (int) (Math.random() * (max - min) + min);
     }
 
     private Position generateRandomPosition() {
@@ -105,6 +105,7 @@ public class Game {
 
         if (fruit.getPosition().equals(head)) {
             snake.increaseSize();
+            delay -= 2;
             generateFruit();
         }
         if (snake.getFullSnake().equals(head)) {

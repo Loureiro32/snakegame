@@ -90,7 +90,7 @@ public final class Field {
     }
 
 
-    /*public static void drawCounterPoints(int points) {
+    /*public static void drawPoints(int points) {
         screen.putString(0, 0, Counter, Terminal.Color.WHITE, Terminal.Color.DEFAULT);
     }*/
 
