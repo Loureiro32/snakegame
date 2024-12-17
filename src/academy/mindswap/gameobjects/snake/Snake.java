@@ -5,6 +5,7 @@ import academy.mindswap.field.Position;
 import java.util.LinkedList;
 
 public class Snake {
+    //es gayyy
 
     private final static int SNAKE_INITIAL_SIZE = 3;
     private static LinkedList<Position> body;
